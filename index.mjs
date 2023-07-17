@@ -1,11 +1,12 @@
 import { AudioContext } from 'node-web-audio-api';
 global.AudioContext = AudioContext
 
-import { controls, repl, evalScope } from '@strudel.cycles/core';
+import { controls, repl, evalScope } from '@strudel.cycles/core/dist/index.mjs';
 import { samples, getAudioContext, webaudioOutput, initAudioOnFirstClick } from '@strudel.cycles/webaudio/dist/index.mjs';
 import { transpiler } from '@strudel.cycles/transpiler/dist/index.mjs';
 import readline from 'readline';
 
+process.env['WEB_AUDIO_LATENCY'] = 'playback';
 const ctx = getAudioContext();
 
 const { evaluate } = repl({
