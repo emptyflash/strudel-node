@@ -1,12 +1,12 @@
-import { AudioContext } from 'node-web-audio-api';
-global.AudioContext = AudioContext
+import * as WebAudio from 'node-web-audio-api';
+Object.assign(global, WebAudio)
 
-import { controls, repl, evalScope } from '@strudel.cycles/core/dist/index.mjs';
-import { samples, getAudioContext, webaudioOutput, initAudioOnFirstClick } from '@strudel.cycles/webaudio/dist/index.mjs';
-import { transpiler } from '@strudel.cycles/transpiler/dist/index.mjs';
+import { controls, repl, evalScope } from '@strudel/core';
+import { samples, getAudioContext, webaudioOutput, initAudioOnFirstClick } from '@strudel/webaudio';
+import { transpiler } from '@strudel/transpiler';
 import readline from 'readline';
 
-process.env['WEB_AUDIO_LATENCY'] = 'playback';
+//process.env['WEB_AUDIO_LATENCY'] = 'playback';
 const ctx = getAudioContext();
 
 const { evaluate } = repl({
@@ -17,8 +17,8 @@ const { evaluate } = repl({
 
 await evalScope(
   controls,
-  import('@strudel.cycles/mini/dist/index.mjs'),
-  import('@strudel.cycles/webaudio/dist/index.mjs'),
+  import('@strudel/mini/dist/index.mjs'),
+  import('@strudel/webaudio/dist/index.mjs'),
 );
 
 await samples('github:tidalcycles/Dirt-Samples/master')

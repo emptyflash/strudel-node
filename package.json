@@ -10,11 +10,11 @@
   "author": "",
   "license": "ACSL",
   "dependencies": {
-    "@strudel.cycles/core": "^0.8.2",
-    "@strudel.cycles/mini": "^0.8.2",
-    "@strudel.cycles/tonal": "^0.8.2",
-    "@strudel.cycles/transpiler": "^0.8.2",
-    "@strudel.cycles/webaudio": "^0.8.2",
-    "node-web-audio-api": "github:emptyflash/node-web-audio-api"
+    "@strudel/core": "^1.2.3",
+    "@strudel/mini": "^1.2.3",
+    "@strudel/tonal": "^1.2.3",
+    "@strudel/transpiler": "^1.2.3",
+    "@strudel/webaudio": "^1.2.3",
+    "node-web-audio-api": "^1.0.4"
   }
 }
